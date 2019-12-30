@@ -10,29 +10,68 @@ class Wrapper extends Component {
     {
       id:1,
       picked:false,
-      image: 'green'
+      image: '/images/bone-removebg-preview.png'
     },
-  
     {
       id:2,
       picked:false,
-      image: 'black'
+      image: '/images/everest-removebg-preview.png'
     },
-  
     {
       id:3,
       picked:false,
-      image: 'yellow'
+      image: '/images/man-removebg-preview.png'
     },
-  
-  ],
+    {
+      id:4,
+      picked:false,
+      image: '/images/alex-removebg-preview.png'
+    },
+    {
+      id:5,
+      picked:false,
+      image: '/images/apollo.png'
+    },
+    {
+      id:6,
+      picked:false,
+      image: '/images/carlos.png'
+    },
+    {
+      id:7,
+      picked:false,
+      image: '/images/Chase-removebg-preview.png'
+    },
+    {
+      id:8,
+      picked:false,
+      image: '/images/rocky-removebg-preview.png'
+    },
+    {
+      id:9,
+      picked:false,
+      image: '/images/jake.png'
+    },
+    {
+      id:10,
+      picked:false,
+      image: '/images/mayor.png'
+    },
+    {
+      id:11,
+      picked:false,
+      image: '/images/pink-removebg-preview.png'
+    },
+    {
+      id:12,
+      picked:false,
+      image: '/images/robo.jpg'
+    },
 
+  ],
   score: 0 ,
   topScore: 0 
-
   }
-
-
 
   cardSelectHandle =(card)=>{
     const newCard = [...this.state.cards];
@@ -53,19 +92,10 @@ class Wrapper extends Component {
     }else{
        newCard[index].picked = true;
        const newScore = this.state.score +1;
-      // if(this.state.score > this.state.topScore){
-        
-      // }
-      //  const newTopScore = this.state.topScore +1;
-       
        newCard.sort(()=> Math.random()-0.5); 
-        this.setState({cards: newCard, score:newScore,}); 
-   
-      
+       this.setState({cards: newCard, score:newScore,}); 
     }
-
   }
-
 
   render() { 
     return ( 
@@ -73,8 +103,8 @@ class Wrapper extends Component {
             <NavBar score={this.state.score} topScore={this.state.topScore}/>
             <Header />
 
-            <div class="container">
-              <div class="row row-cols-2">
+            <div className="container">
+              <div className="row row-cols-4">
                {this.state.cards.map(c => 
               
               <Cards 
