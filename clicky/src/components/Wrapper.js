@@ -70,24 +70,32 @@ class Wrapper extends Component {
 
   ],
   score: 0 ,
-  topScore: 0 
+  topScore: 0 ,
+  
   }
 
   cardSelectHandle =(card)=>{
     const newCard = [...this.state.cards];
     const index = newCard.indexOf(card);
-    if(this.state.score >=this.state.topScore ){
-      var newTopScore = this.state.topScore +1;
-      if(newTopScore === (this.state.cards.length + 1)){
-        newTopScore--;
-      }
-      this.setState({topScore:newTopScore})
-    }
+    // if(this.state.score >= this.state.topScore  ){
+    //   var newTopScore = this.state.topScore +1;
+    //   if(newTopScore === (this.state.cards.length + 1)){
+    //     newTopScore--;
+    //   }
+    //   this.setState({topScore:newTopScore})
+    // }
 
     if(newCard[index].picked === true ){
         const newCard2= [...this.state.cards];
         newCard2.map(c=> c.picked =false );
-        this.setState({score: 0, cards:newCard2});
+        if(this.state.score > this.state.topScore){
+            var newRecord;
+            newRecord = this.state.score;
+        }else{
+            newRecord = this.state.topScore
+        }
+
+        this.setState({score: 0, cards:newCard2, topScore: newRecord});
 
     }else{
        newCard[index].picked = true;
@@ -97,14 +105,17 @@ class Wrapper extends Component {
     }
   }
 
+ 
+
+
   render() { 
     return ( 
         <div>
-            <NavBar score={this.state.score} topScore={this.state.topScore}/>
+            <NavBar score={this.state.score} topScore={this.state.topScore} />
             <Header />
-
-            <div className="container">
-              <div className="row row-cols-4">
+          <div className="container card-holder">
+            <div className="card-div">
+             
                {this.state.cards.map(c => 
               
               <Cards 
@@ -113,12 +124,14 @@ class Wrapper extends Component {
                 id={c.id}
                 image ={c.image}
                 cardSelectHandle = {this.cardSelectHandle}
+                onMouseHandle = {this.onMouseHandle}
                 cards={c}
               />
               ) }
-              </div>
+
+     
+             </div>
             </div>
-            
 
 
 

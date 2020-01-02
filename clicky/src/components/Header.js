@@ -3,10 +3,10 @@ import React from 'react';
 const Header = () =>{
   return (
     
-  <div class="jumbotron jumbotron-fluid">
+  <div id="header" class="jumbotron jumbotron-fluid text-center">
       <div class="container">
-        <h1 class="display-4">Fluid jumbotron</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1 class="display-4">Clicky Game</h1>
+        <p class="lead">Click on an image to earn points, but don't click on any more than once!</p>
       </div>
   </div>
   )
