@@ -77,14 +77,7 @@ class Wrapper extends Component {
   cardSelectHandle =(card)=>{
     const newCard = [...this.state.cards];
     const index = newCard.indexOf(card);
-    // if(this.state.score >= this.state.topScore  ){
-    //   var newTopScore = this.state.topScore +1;
-    //   if(newTopScore === (this.state.cards.length + 1)){
-    //     newTopScore--;
-    //   }
-    //   this.setState({topScore:newTopScore})
-    // }
-
+   
     if(newCard[index].picked === true ){
         const newCard2= [...this.state.cards];
         newCard2.map(c=> c.picked =false );
@@ -94,7 +87,6 @@ class Wrapper extends Component {
         }else{
             newRecord = this.state.topScore
         }
-
         this.setState({score: 0, cards:newCard2, topScore: newRecord});
 
     }else{
