@@ -12,7 +12,7 @@ class Cards extends Component {
   render() { 
          
     return (
-      // backgroundImage:`url(${this.props.image})`    width: 3+"rem",
+      // backgroundImage:`url(${this.props.image})`  width: 3+"rem",
        <div onClick={()=> this.props.cardSelectHandle(this.props.cards)} onMouseEnter={this.MouseEnter} onMouseLeave={this.MouseLeave}  className="card-item" style={{ backgroundImage:`url(${this.props.image})`} } >
       
       </div>
