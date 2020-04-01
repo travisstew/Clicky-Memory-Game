@@ -5,11 +5,15 @@
 
 A memory game built using Reaact components. This application should keep track of the user's score. The user's score is incremented when clicking an image for the first time. The user's score should be reset to 0 if they click the same image more than once. 
 
+- View Website https://clicky-app-memory.herokuapp.com/
+
 ![alt text](images/clickygif.gif)
 
-## Installation 
+## Installation
+- clone repo 
 - install: `npm create-react-app app-name`
-
+- inside `public/images` folder, add images of your choice 
+- update the state cards object with new image paths in `src/components` Wrapper.js component
 
 ## License 
 
